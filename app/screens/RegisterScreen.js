@@ -12,14 +12,14 @@ import InputField from './../components/common/InputField';
 //config
 import Colors from '../config/Colors';
 
-function SigninScreen(props) {
+function RegisterScreen(props) {
 
     // Input fields
     const [indicator, showIndicator] = useState(false);
 
     const [inputField, SetInputField] = useState([
         {
-            placeholder: "Enter username",
+            placeholder: "Enter email",
             value: "",
         },
         {
@@ -66,21 +66,18 @@ function SigninScreen(props) {
                 <ScrollView style={{ flex: 1, width: '100%' }} >
                     <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%' }}>
                         <Text style={{ marginTop: RFPercentage(6), color: Colors.white, fontSize: RFPercentage(3.2), fontFamily: 'Montserrat_700Bold' }} >
-                            Hello Again!
+                            Hello!
                         </Text>
-                        <View style={{ marginTop: RFPercentage(2.2), width: '90%', justifyContent: 'center', alignItems: 'center' }} >
+                        <View style={{ marginTop: RFPercentage(2.6), width: '90%', justifyContent: 'center', alignItems: 'center' }} >
                             <Text style={{ color: Colors.white, fontSize: RFPercentage(2.2), fontFamily: 'Montserrat_400Regular' }} >
-                                Welcome back you've been
-                            </Text>
-                            <Text style={{ marginTop: RFPercentage(0.7), color: Colors.white, fontSize: RFPercentage(2.2), fontFamily: 'Montserrat_400Regular' }} >
-                                missed!
+                                Welcome to Hurghada Rentals!
                             </Text>
                         </View>
 
                         {/* Input field */}
                         <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%' }}>
                             {inputField.map((item, i) => (
-                                <View key={i} style={{ marginTop: i == 0 ? RFPercentage(4) : RFPercentage(2) }} >
+                                <View key={i} style={{ marginTop: i == 0 ? RFPercentage(5) : RFPercentage(2) }} >
                                     <InputField
                                         placeholder={item.placeholder}
                                         placeholderColor={Colors.white}
@@ -109,9 +106,9 @@ function SigninScreen(props) {
                         </View>
 
                         {/* Button */}
-                        <View style={{ width: "100%", alignItems: "center", marginTop: RFPercentage(4) }}>
+                        <View style={{ width: "100%", alignItems: "center", marginTop: RFPercentage(5) }}>
                             <MyAppButton
-                                title="Sign in"
+                                title="Register Now"
                                 padding={RFPercentage(2)}
                                 onPress={() => handleLogin()}
                                 backgroundColor={Colors.white}
@@ -124,7 +121,7 @@ function SigninScreen(props) {
                         </View>
 
                         {/* or */}
-                        <View style={{ marginTop: RFPercentage(4), width: '67%', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', alignSelf: 'center' }} >
+                        <View style={{ marginTop: RFPercentage(4.5), width: '67%', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', alignSelf: 'center' }} >
                             <View style={{ width: RFPercentage(10), height: RFPercentage(0.1), backgroundColor: Colors.white, position: 'absolute', left: 0 }} />
                             <Text style={{ color: Colors.white, fontFamily: 'Montserrat_400Regular', fontSize: RFPercentage(1.8) }} >
                                 or continue with
@@ -133,7 +130,7 @@ function SigninScreen(props) {
                         </View>
 
                         {/* Social Links */}
-                        <View style={{ marginTop: RFPercentage(3.2), justifyContent: 'center', alignItems: 'center', alignSelf: 'center', flexDirection: 'row' }} >
+                        <View style={{ marginTop: RFPercentage(4), justifyContent: 'center', alignItems: 'center', alignSelf: 'center', flexDirection: 'row' }} >
                             <TouchableOpacity activeOpacity={0.8} style={{ justifyContent: 'center', alignItems: 'center', width: RFPercentage(4.8), height: RFPercentage(4.8), borderRadius: RFPercentage(1.7), borderColor: Colors.white, borderWidth: RFPercentage(0.1), backgroundColor: '#F4FFF83B' }} >
                                 <Image style={{ width: RFPercentage(3), height: RFPercentage(3) }} source={require('../../assets/images/g.png')} />
                             </TouchableOpacity>
@@ -145,11 +142,11 @@ function SigninScreen(props) {
                         {/* Not a memeber text */}
                         <View style={{ position: 'absolute', bottom: RFPercentage(4), width: '90%', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', alignSelf: 'center' }} >
                             <Text style={{ color: Colors.white, fontSize: RFPercentage(1.9), fontFamily: 'Montserrat_400Regular' }} >
-                                Not a member?
+                                Already a member?
                             </Text>
-                            <TouchableOpacity activeOpacity={0.8} onPress={() => props.navigation.navigate("RegisterScreen")} >
+                            <TouchableOpacity activeOpacity={0.8} onPress={() => props.navigation.navigate("SigninScreen")} >
                                 <Text style={{ marginLeft: RFPercentage(1), color: Colors.white, fontSize: RFPercentage(1.9), fontFamily: 'Montserrat_400Regular' }} >
-                                    Register Now
+                                    Login Now
                                 </Text>
                             </TouchableOpacity>
                         </View>
@@ -187,4 +184,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default SigninScreen;
+export default RegisterScreen;

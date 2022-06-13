@@ -32,14 +32,13 @@ function WelcomeScreen(props) {
                 <View style={{ width: "100%", alignItems: "center", position: 'absolute', bottom: RFPercentage(12) }}>
                     <MyAppButton
                         title="Explore"
-                        padding={RFPercentage(2)}
                         onPress={() => props.navigation.navigate("SigninScreen")}
                         backgroundColor={Colors.white}
                         color={Colors.black}
                         bold={false}
                         fontFamily={'Montserrat_600SemiBold'}
                         borderRadius={RFPercentage(1.5)}
-                        width={"34%"}
+                        width={"36%"}
                     />
                 </View>
             </LinearGradient>

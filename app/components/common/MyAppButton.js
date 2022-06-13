@@ -10,7 +10,7 @@ function MyAppButton({
     fontSize = RFPercentage(2.4),
     backgroundColor,
     fontFamily = null,
-    padding = RFPercentage(2),
+    height = RFPercentage(7.2),
     width = "100%",
     color,
     borderWidth = null,
@@ -29,7 +29,7 @@ function MyAppButton({
                 justifyContent: "center",
                 alignItems: "center",
                 alignSelf: "center", //most important
-                padding: padding,
+                height: height,
             }}
         >
             <Text
