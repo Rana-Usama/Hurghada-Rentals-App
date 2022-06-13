@@ -42,8 +42,8 @@ function InputField({
             {leftIconName ? (
                 <TouchableOpacity style={{ alignItems: 'center', justifyContent: 'center', position: "absolute", left: RFPercentage(1), width: RFPercentage(5), height: RFPercentage(5), borderRadius: RFPercentage(1.2) }}>
                     <MaterialIcons
-                        color={Colors.black}
-                        size={RFPercentage(3.8)}
+                        color={'#1115146E'}
+                        size={RFPercentage(2.7)}
                         // style={{ right: RFPercentage(1) }}
                         name={leftIconName}
                     />
