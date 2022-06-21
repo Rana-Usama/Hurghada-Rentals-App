@@ -13,6 +13,7 @@ import HomeScreen from './app/screens/HomeScreen';
 
 //config
 import Colors from './app/config/Colors';
+import DetailPageScreen from './app/screens/DetailPageScreen';
 
 const Stack = createStackNavigator();
 
@@ -31,11 +32,12 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="WelcomeScreen">
+      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="DetailPageScreen">
         <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
         <Stack.Screen name="SigninScreen" component={SigninScreen} />
         <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
         <Stack.Screen name="HomeScreen" component={HomeScreen} />
+        <Stack.Screen name="DetailPageScreen" component={DetailPageScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

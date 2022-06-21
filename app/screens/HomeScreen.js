@@ -10,7 +10,6 @@ import InputField from './../components/common/InputField';
 
 //config
 import Colors from '../config/Colors';
-import { Montserrat_400Regular } from '@expo-google-fonts/montserrat';
 
 function HomeScreen(props) {
 
@@ -109,11 +108,10 @@ function HomeScreen(props) {
                     Category
                 </Text>
             </View>
-
             <View style={{ marginTop: RFPercentage(2.5), flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', alignSelf: 'center' }} >
-                <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={{ flex: 1, width: '100%', }} >
+                <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={{ flex: 1, width: '100%' }} >
                     {categories.map((item, i) => (
-                        <TouchableOpacity activeOpacity={0.8} key={i} style={{ marginLeft: RFPercentage(2), borderColor: Colors.primary, borderWidth: RFPercentage(0.1), justifyContent: 'center', alignItems: 'center', width: RFPercentage(14), height: RFPercentage(4.5), borderRadius: RFPercentage(1.2) }} >
+                        <TouchableOpacity activeOpacity={0.7} key={i} style={{ marginLeft: RFPercentage(2), borderColor: Colors.primary, borderWidth: RFPercentage(0.1), justifyContent: 'center', alignItems: 'center', width: RFPercentage(14), height: RFPercentage(4.5), borderRadius: RFPercentage(1.2) }} >
                             <Text style={{ color: Colors.black, fontFamily: 'Montserrat_400Regular', fontSize: RFPercentage(2.1) }} >
                                 {item.title}
                             </Text>
@@ -134,7 +132,7 @@ function HomeScreen(props) {
 
                     {propertiesCartData.map((item, i) => (
                         <View key={i} style={{ marginTop: i !== 0 ? RFPercentage(2) : 0, width: '100%', justifyContent: 'center', alignItems: 'flex-start', alignSelf: 'center' }} >
-                            <TouchableOpacity activeOpacity={0.8} style={{ marginTop: RFPercentage(3), justifyContent: 'center', alignItems: 'flex-start', width: '90%', alignSelf: 'center' }} >
+                            <TouchableOpacity onPress={() => props.navigation.navigate("DetailPageScreen")} activeOpacity={0.8} style={{ marginTop: RFPercentage(3), justifyContent: 'center', alignItems: 'flex-start', width: '90%', alignSelf: 'center' }} >
                                 <Image source={item.imageSource} style={{ borderRadius: RFPercentage(2), width: '100%', height: RFPercentage(40) }} />
                             </TouchableOpacity>
                             <View style={{ marginTop: RFPercentage(1.7), width: '90%', justifyContent: 'flex-start', alignItems: 'center', flexDirection: 'row', alignSelf: 'center' }} >
