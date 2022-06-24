@@ -10,10 +10,10 @@ import WelcomeScreen from './app/screens/WelcomeScreen';
 import SigninScreen from './app/screens/SigninScreen';
 import RegisterScreen from './app/screens/RegisterScreen';
 import HomeScreen from './app/screens/HomeScreen';
+import DetailPageScreen from './app/screens/DetailPageScreen';
 
 //config
 import Colors from './app/config/Colors';
-import DetailPageScreen from './app/screens/DetailPageScreen';
 
 const Stack = createStackNavigator();
 

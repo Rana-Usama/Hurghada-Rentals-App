@@ -3,6 +3,8 @@ import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView } from 'rea
 import { RFPercentage } from 'react-native-responsive-fontsize';
 import { LinearGradient } from 'expo-linear-gradient';
 import { FontAwesome } from '@expo/vector-icons';
+import { SliderBox } from "react-native-image-slider-box";
+import { Ionicons } from '@expo/vector-icons';
 
 //components
 import Screen from './../components/Screen';
@@ -11,15 +13,41 @@ import Screen from './../components/Screen';
 import Colors from '../config/Colors';
 
 function DetailPageScreen(props) {
+
+    const dataImages = {
+        images: [
+            require('../../assets/images/c1.png'),
+            require('../../assets/images/c2.png'),
+            require('../../assets/images/c1.png'),
+        ]
+    }
+
     return (
         <Screen style={styles.screen}>
 
             {/* Images Swiper  */}
+            <View style={{ height: RFPercentage(30), width: '100%' }}>
+                <SliderBox
+                    images={dataImages.images}
+                    sliderBoxHeight={RFPercentage(40)}
+                    inactiveDotColor="#90A4AE"
+                    // ImageComponentStyle={{ height: RFPercentage(30) }}
+                    dotColor="#ffff"
+                // onCurrentImagePressed={index =>
+                //     console.warn(`image ${index} pressed`)
+                // }
+                />
+            </View>
+
+            {/* Back Navigation */}
+            <TouchableOpacity activeOpacity={0.8} style={{ position: 'absolute', top: RFPercentage(4), left: RFPercentage(2), width: RFPercentage(5), height: RFPercentage(5), backgroundColor: Colors.white, borderRadius: RFPercentage(20), justifyContent: 'center', alignItems: 'center' }} >
+                <Ionicons name="chevron-back-outline" style={{ fontSize: RFPercentage(4) }} color={Colors.black} />
+            </TouchableOpacity>
 
             {/* Details */}
-            <ScrollView style={{ flex: 1, width: '100%' }} >
+            <ScrollView style={{ flex: 1, width: '100%', marginTop: RFPercentage(2) }} >
                 <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%' }}>
-                    <View style={{ marginTop: RFPercentage(2), width: '100%', justifyContent: 'center', alignItems: 'flex-start', alignSelf: 'center' }} >
+                    <View style={{ width: '100%', justifyContent: 'center', alignItems: 'flex-start', alignSelf: 'center' }} >
                         <View style={{ marginTop: RFPercentage(1.7), width: '90%', justifyContent: 'flex-start', alignItems: 'center', flexDirection: 'row', alignSelf: 'center' }} >
                             <Text style={{ fontFamily: 'Montserrat_600SemiBold', fontSize: RFPercentage(2.2), color: Colors.black }} >
                                 Vacation Mension
@@ -80,9 +108,7 @@ function DetailPageScreen(props) {
                                 <FontAwesome name="phone" style={{ fontSize: RFPercentage(4) }} color={Colors.white} />
                             </LinearGradient>
                         </TouchableOpacity>
-
                     </View>
-
                 </View>
             </ScrollView>
 
