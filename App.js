@@ -11,6 +11,7 @@ import SigninScreen from './app/screens/SigninScreen';
 import RegisterScreen from './app/screens/RegisterScreen';
 import HomeScreen from './app/screens/HomeScreen';
 import DetailPageScreen from './app/screens/DetailPageScreen';
+import AddPropertyScreen from './app/screens/AddPropertyScreen';
 
 //config
 import Colors from './app/config/Colors';
@@ -32,12 +33,13 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="DetailPageScreen">
+      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="WelcomeScreen">
         <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
         <Stack.Screen name="SigninScreen" component={SigninScreen} />
         <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
         <Stack.Screen name="HomeScreen" component={HomeScreen} />
         <Stack.Screen name="DetailPageScreen" component={DetailPageScreen} />
+        <Stack.Screen name="AddPropertyScreen" component={AddPropertyScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

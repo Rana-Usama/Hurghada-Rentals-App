@@ -14,7 +14,7 @@ function WelcomeScreen(props) {
 
     return (
         <Screen style={styles.screen}>
-            <Image source={require('../../assets/images/logo.png')} style={styles.logo} />
+            <Image source={require('../../assets/images/lm.png')} style={styles.logo} />
             <LinearGradient colors={['#38EF7D', '#11998E']} start={[1, 1]} end={[0.5, 0.1]} style={styles.linearGradient} >
                 <Text style={{ marginTop: RFPercentage(20), color: Colors.white, fontSize: RFPercentage(3.1), fontFamily: 'Montserrat_700Bold' }} >
                     YOUR DREAM SPACE
@@ -65,9 +65,9 @@ const styles = StyleSheet.create({
         height: RFPercentage(70)
     },
     logo: {
-        marginTop: RFPercentage(6),
-        width: RFPercentage(40),
-        height: RFPercentage(15)
+        marginTop: RFPercentage(4),
+        width: RFPercentage(41),
+        height: RFPercentage(20)
     }
 })
 

@@ -21,6 +21,7 @@ function InputField({
     backgroundColor = Colors.white,
     keyboardType = "default",
     textCenter = "left",
+    multiline = false,
     fontSize = RFPercentage(2.5),
     editIcon = false,
     dropdownIcon = false,
@@ -32,6 +33,7 @@ function InputField({
     leftIconName = '',
     autoFocus = false,
     searchMarginLeft = null,
+    placeholderAtStart = false,
     color = "black",
     ...otherProps
 }) {
@@ -56,12 +58,13 @@ function InputField({
                 onChangeText={(text) => handleFeild(text)}
                 onResponderStart={onTouchStart}
                 onEndEditing={onTouchEnd}
+                multiline={multiline ? true : false}
                 value={value}
                 autoFocus={autoFocus}
                 keyboardType={keyboardType}
                 secureTextEntry={secure && !eyeIcon}
                 textAlign={textCenter}
-                style={{ left: RFPercentage(2), color: color, alignSelf: "center", fontFamily: fontFamily, fontSize: fontSize, width: leftIconName ? "85%" : "90%" }}
+                style={{ left: RFPercentage(1), bottom: placeholderAtStart ? RFPercentage(8) : 0, color: color, alignSelf: "center", fontFamily: fontFamily, fontSize: fontSize, width: leftIconName ? "85%" : "90%" }}
                 {...otherProps}
             ></TextInput>
 

@@ -60,7 +60,7 @@ function RegisterScreen(props) {
         <Screen style={styles.screen}>
             <LoadingModal show={indicator} />
             {/* Logo */}
-            <Image source={require('../../assets/images/logo2.png')} style={styles.logo} />
+            <Image source={require('../../assets/images/lm.png')} style={styles.logo} />
 
             <LinearGradient colors={['#38EF7D', '#11998E']} start={[1, 1]} end={[0.5, 0.1]} style={styles.linearGradient} >
                 <ScrollView style={{ flex: 1, width: '100%' }} >
@@ -87,7 +87,7 @@ function RegisterScreen(props) {
                                         borderColor={'#FAFAFA'}
                                         secure={item.secure}
                                         borderRadius={RFPercentage(1.6)}
-                                        color={Colors.black}
+                                        color={Colors.white}
                                         fontSize={RFPercentage(2)}
                                         handleFeild={(text) => handleChange(text, i)}
                                         value={item.value}
@@ -178,9 +178,9 @@ const styles = StyleSheet.create({
         height: RFPercentage(77.5)
     },
     logo: {
-        marginTop: RFPercentage(8),
-        width: RFPercentage(24),
-        height: RFPercentage(9)
+        marginTop: RFPercentage(3.5),
+        width: RFPercentage(30),
+        height: RFPercentage(14.5)
     }
 })
 

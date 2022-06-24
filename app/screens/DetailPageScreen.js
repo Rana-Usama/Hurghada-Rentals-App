@@ -40,7 +40,7 @@ function DetailPageScreen(props) {
             </View>
 
             {/* Back Navigation */}
-            <TouchableOpacity activeOpacity={0.8} style={{ position: 'absolute', top: RFPercentage(4), left: RFPercentage(2), width: RFPercentage(5), height: RFPercentage(5), backgroundColor: Colors.white, borderRadius: RFPercentage(20), justifyContent: 'center', alignItems: 'center' }} >
+            <TouchableOpacity activeOpacity={0.8} onPress={() => props.navigation.navigate("HomeScreen")} style={{ position: 'absolute', top: RFPercentage(4), left: RFPercentage(2), width: RFPercentage(5), height: RFPercentage(5), backgroundColor: Colors.white, borderRadius: RFPercentage(20), justifyContent: 'center', alignItems: 'center' }} >
                 <Ionicons name="chevron-back-outline" style={{ fontSize: RFPercentage(4) }} color={Colors.black} />
             </TouchableOpacity>
 

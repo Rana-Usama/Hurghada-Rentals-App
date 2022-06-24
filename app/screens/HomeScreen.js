@@ -168,7 +168,7 @@ function HomeScreen(props) {
             </ScrollView>
 
             {/* Plus */}
-            <TouchableOpacity activeOpacity={0.8} style={{ position: 'absolute', bottom: RFPercentage(3), right: RFPercentage(3) }} >
+            <TouchableOpacity activeOpacity={0.8} onPress={() => props.navigation.navigate("AddPropertyScreen")} style={{ position: 'absolute', bottom: RFPercentage(3), right: RFPercentage(3) }} >
                 <LinearGradient colors={['#38EF7D', '#11998E']} start={[1, 1]} end={[0.5, 0.1]} style={{ justifyContent: 'center', alignItems: 'center', width: RFPercentage(9.8), height: RFPercentage(9.8), borderRadius: RFPercentage(30) }} >
                     <Feather name="plus" style={{ fontSize: RFPercentage(5.4) }} color={Colors.white} />
                 </LinearGradient>
