@@ -3,6 +3,9 @@ import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView } from 'rea
 import { RFPercentage } from 'react-native-responsive-fontsize';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Feather } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import RNPickerSelect from 'react-native-picker-select';
 
 //components
 import Screen from './../components/Screen';
@@ -12,6 +15,8 @@ import InputField from './../components/common/InputField';
 import Colors from '../config/Colors';
 
 function HomeScreen(props) {
+
+    const [serveas, setserveas] = useState("")
 
     const [inputField, SetInputField] = useState([
         {
@@ -29,16 +34,16 @@ function HomeScreen(props) {
 
     const categories = [
         {
-            title: 'All'
-        },
-        {
             title: 'Apartment'
         },
         {
-            title: 'House'
+            title: 'Studio'
         },
         {
-            title: 'Rentals'
+            title: 'Duplex'
+        },
+        {
+            title: 'Villa'
         }
     ]
 
@@ -62,6 +67,15 @@ function HomeScreen(props) {
             area: '5436 sqft'
         },
     ]
+
+
+    const iconComponent = () => {
+        return <MaterialCommunityIcons
+            name={"chevron-down"}
+            size={20}
+            color={"grey"}
+        />
+    }
 
     return (
         <Screen style={styles.screen}>
@@ -103,12 +117,15 @@ function HomeScreen(props) {
             </View>
 
             {/* Category */}
-            <View style={{ marginTop: RFPercentage(1.2), width: '90%', justifyContent: 'center', alignItems: 'flex-start', alignSelf: 'center' }} >
-                <Text style={{ fontSize: RFPercentage(3), color: Colors.black, fontFamily: 'Montserrat_400Regular' }} >
+            <View style={{ marginTop: RFPercentage(2), flexDirection: 'row', width: '90%', justifyContent: 'flex-start', alignItems: 'center', alignSelf: 'center' }} >
+                <Text style={{ fontSize: RFPercentage(2.7), color: Colors.black, fontFamily: 'Montserrat_400Regular' }} >
                     Category
                 </Text>
+                <TouchableOpacity activeOpacity={0.8} style={{ position: 'absolute', right: 0 }} >
+                    <FontAwesome name="filter" style={{ fontSize: RFPercentage(4.2) }} color={Colors.primary} />
+                </TouchableOpacity>
             </View>
-            <View style={{ marginTop: RFPercentage(2.5), flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', alignSelf: 'center' }} >
+            <View style={{ marginTop: RFPercentage(3), flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', alignSelf: 'center' }} >
                 <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={{ flex: 1, width: '100%' }} >
                     {categories.map((item, i) => (
                         <TouchableOpacity activeOpacity={0.7} key={i} style={{ marginLeft: RFPercentage(2), borderColor: Colors.primary, borderWidth: RFPercentage(0.1), justifyContent: 'center', alignItems: 'center', width: RFPercentage(14), height: RFPercentage(4.5), borderRadius: RFPercentage(1.2) }} >
@@ -120,16 +137,42 @@ function HomeScreen(props) {
                 </ScrollView>
             </View>
 
-            <View style={{ bottom: RFPercentage(0.5), marginTop: RFPercentage(2.7), width: '90%', justifyContent: 'center', alignItems: 'flex-start', alignSelf: 'center' }} >
-                <Text style={{ fontSize: RFPercentage(3), color: Colors.black, fontFamily: 'Montserrat_400Regular' }} >
-                    Recomended
-                </Text>
-            </View>
-
             {/* Cart */}
-            <ScrollView style={{ flex: 1, width: '100%' }} >
+            <ScrollView style={{ flex: 1, width: '100%', marginTop: RFPercentage(1) }} >
                 <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%' }}>
-
+                    {/* Location Picker */}
+                    <View style={{ flexDirection: 'row', bottom: RFPercentage(0.5), marginTop: RFPercentage(5), width: '90%', justifyContent: 'flex-start', alignItems: 'center', alignSelf: 'center' }} >
+                        <Text style={{ fontSize: RFPercentage(2.5), color: Colors.black, fontFamily: 'Montserrat_500Medium' }} >
+                            Select Location
+                        </Text>
+                        <TouchableOpacity activeOpacity={0.8} style={{ justifyContent: 'center', alignItems: 'center', width: RFPercentage(27), height: RFPercentage(5), borderRadius: RFPercentage(1.5), borderColor: Colors.grey, borderWidth: RFPercentage(0.2), position: 'absolute', right: 0 }} >
+                            <View style={{ width: '90%' }} >
+                                <RNPickerSelect
+                                    onValueChange={(value) => setserveas(value)}
+                                    placeholder={{ label: 'Location' }}
+                                    Icon={Platform.OS == 'android' ? null : iconComponent}
+                                    items={[
+                                        { label: 'Hurghada', value: 'Hurghada' },
+                                        { label: 'Sahl Hasheesh', value: 'Sahl Hasheesh' },
+                                        { label: 'Makadi', value: 'Makadi' },
+                                        { label: 'El Gouna', value: 'El Gouna' },
+                                        { label: 'Magawish', value: 'Magawish' },
+                                        { label: 'El Ahyaa', value: 'El Ahyaa' },
+                                        { label: 'El Helal', value: 'El Helal' },
+                                        { label: 'El Kawther', value: 'El Kawther' },
+                                        { label: 'El Dahar', value: 'El Dahar' },
+                                        { label: 'Intercontinental District', value: 'Intercontinental District' },
+                                    ]}
+                                />
+                            </View>
+                        </TouchableOpacity>
+                    </View>
+                    {/* Recomended */}
+                    <View style={{ flexDirection: 'row', bottom: RFPercentage(0.5), marginTop: RFPercentage(5), width: '90%', justifyContent: 'flex-start', alignItems: 'center', alignSelf: 'center' }} >
+                        <Text style={{ fontSize: RFPercentage(2.6), color: Colors.black, fontFamily: 'Montserrat_400Regular' }} >
+                            Recomended
+                        </Text>
+                    </View>
                     {propertiesCartData.map((item, i) => (
                         <View key={i} style={{ marginTop: i !== 0 ? RFPercentage(2) : 0, width: '100%', justifyContent: 'center', alignItems: 'flex-start', alignSelf: 'center' }} >
                             <TouchableOpacity onPress={() => props.navigation.navigate("DetailPageScreen")} activeOpacity={0.8} style={{ marginTop: RFPercentage(3), justifyContent: 'center', alignItems: 'flex-start', width: '90%', alignSelf: 'center' }} >

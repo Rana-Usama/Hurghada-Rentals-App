@@ -165,9 +165,10 @@ function AddPropertyScreen(props) {
                                     placeholder={{ label: 'Property Type' }}
                                     Icon={Platform.OS == 'android' ? null : iconComponent}
                                     items={[
-                                        { label: 'Mension', value: 'Mension' },
                                         { label: 'Apartment', value: 'Apartment' },
-                                        { label: 'Rentals', value: 'Rentals' },
+                                        { label: 'Studio', value: 'Studio' },
+                                        { label: 'Duplex', value: 'Duplex' },
+                                        { label: 'Villa', value: 'Villa' },
                                     ]}
                                 />
                             </View>
