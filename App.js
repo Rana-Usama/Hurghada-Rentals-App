@@ -11,6 +11,7 @@ import SigninScreen from './app/screens/SigninScreen';
 import RegisterScreen from './app/screens/RegisterScreen';
 import HomeScreen from './app/screens/HomeScreen';
 import DetailPageScreen from './app/screens/DetailPageScreen';
+import ForgetPasswordScreen from './app/screens/ForgetScreen';
 import AddPropertyScreen from './app/screens/AddPropertyScreen';
 
 //config
@@ -33,13 +34,14 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="WelcomeScreen">
+      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="ForgetPasswordScreen">
         <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
         <Stack.Screen name="SigninScreen" component={SigninScreen} />
         <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
         <Stack.Screen name="HomeScreen" component={HomeScreen} />
         <Stack.Screen name="DetailPageScreen" component={DetailPageScreen} />
         <Stack.Screen name="AddPropertyScreen" component={AddPropertyScreen} />
+        <Stack.Screen name="ForgetPasswordScreen" component={ForgetPasswordScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

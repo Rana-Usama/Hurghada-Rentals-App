@@ -174,9 +174,31 @@ function AddPropertyScreen(props) {
                             </View>
                         </View>
 
+                        <View style={{ borderColor: Colors.grey, height: RFPercentage(7), borderWidth: RFPercentage(0.2), borderRadius: RFPercentage(2), width: '90%', justifyContent: 'center', alignItems: 'center', marginTop: RFPercentage(3) }} >
+                            <View style={{ width: '90%' }} >
+                                <RNPickerSelect
+                                    onValueChange={(value) => setserveas(value)}
+                                    placeholder={{ label: 'Select Location of your Property' }}
+                                    Icon={Platform.OS == 'android' ? null : iconComponent}
+                                    items={[
+                                        { label: 'Hurghada', value: 'Hurghada' },
+                                        { label: 'Sahl Hasheesh', value: 'Sahl Hasheesh' },
+                                        { label: 'Makadi', value: 'Makadi' },
+                                        { label: 'El Gouna', value: 'El Gouna' },
+                                        { label: 'Magawish', value: 'Magawish' },
+                                        { label: 'El Ahyaa', value: 'El Ahyaa' },
+                                        { label: 'El Helal', value: 'El Helal' },
+                                        { label: 'El Kawther', value: 'El Kawther' },
+                                        { label: 'El Dahar', value: 'El Dahar' },
+                                        { label: 'Intercontinental District', value: 'Intercontinental District' },
+                                    ]}
+                                />
+                            </View>
+                        </View>
+
                         <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%' }}>
                             {inputField.map((item, i) => (
-                                <View key={i} style={{ marginTop: i == 0 ? RFPercentage(4) : RFPercentage(2) }} >
+                                <View key={i} style={{ marginTop: i == 0 ? RFPercentage(2.5) : RFPercentage(2) }} >
                                     <InputField
                                         placeholder={item.placeholder}
                                         placeholderColor={'#1115146E'}

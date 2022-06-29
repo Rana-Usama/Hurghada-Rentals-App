@@ -98,7 +98,7 @@ function RegisterScreen(props) {
                         </View>
                         {/* Forget Password */}
                         <View style={{ marginTop: RFPercentage(1), width: '87%', alignSelf: 'center', flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center' }} >
-                            <TouchableOpacity activeOpacity={0.8} >
+                            <TouchableOpacity activeOpacity={0.8} onPress={() => props.navigation.navigate("ForgetPasswordScreen")} >
                                 <Text style={{ fontFamily: 'Montserrat_400Regular', color: Colors.white, fontSize: RFPercentage(1.8), color: Colors.white }} >
                                     Forget Password ?
                                 </Text>
